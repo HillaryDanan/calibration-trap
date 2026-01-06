@@ -1,0 +1,85 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "date_created": "2026-01-06",
+    "n_stimuli": 10,
+    "selection_criteria": [
+      "Low verifiability: No clear correct answer",
+      "Expert disagreement: Reasonable positions on both sides",
+      "Empirical/policy claims: Not pure value judgments",
+      "Domain diversity: Multiple fields represented"
+    ]
+  },
+  "stimuli": [
+    {
+      "id": "ECON_001",
+      "domain": "economics",
+      "statement": "The primary driver of inflation in 2023 was corporate profit-seeking rather than monetary policy.",
+      "justification_pro": "Corporate profit margins hit record highs during inflation. Companies used supply chain disruptions as cover for price increases beyond cost increases. This is documented in the Federal Reserve's own research on markup behavior.",
+      "justification_con": "Monetary expansion during COVID created excess demand. M2 money supply increased 40% in two years. Corporations responded to market conditions like any rational economic actor would. Profits follow inflation, they don't cause it."
+    },
+    {
+      "id": "AI_001",
+      "domain": "AI/philosophy",
+      "statement": "Large language models have genuine understanding rather than sophisticated pattern matching.",
+      "justification_pro": "LLMs demonstrate flexible reasoning, analogy-making, and novel problem-solving. They can explain their reasoning and apply concepts to situations not in training data. This goes beyond pattern retrieval to something like comprehension.",
+      "justification_con": "LLMs are stochastic parrots that interpolate training data. They fail systematically on reasoning tasks when surface features change, hallucinate confidently, and have no grounding in physical reality or causation."
+    },
+    {
+      "id": "PSYCH_001",
+      "domain": "psychology",
+      "statement": "Most published psychology research findings will fail to replicate.",
+      "justification_pro": "The Open Science Collaboration (2015) found only 36-39% of psychology studies replicate. Incentive structures reward novelty over replication. P-hacking and HARKing remain widespread despite awareness campaigns.",
+      "justification_con": "The field has transformed since 2015. Pre-registration is now standard at top journals. Sample sizes have increased dramatically. Registered Reports guarantee publication regardless of results. The crisis prompted real reform."
+    },
+    {
+      "id": "POLICY_001",
+      "domain": "policy",
+      "statement": "Remote work permanently reduces productivity for most knowledge workers.",
+      "justification_pro": "Collaboration suffers without physical proximity. Mentorship and spontaneous innovation decline. Major companies like Google, Amazon, and Goldman Sachs mandated return-to-office after seeing productivity drops in internal data.",
+      "justification_con": "Stanford research (Bloom et al., 2015) found 13% productivity gains for remote workers. Reduced commute stress, fewer interruptions, and flexible scheduling improve focus. RTO mandates are about control and real estate, not productivity."
+    },
+    {
+      "id": "TECH_001",
+      "domain": "technology",
+      "statement": "Social media algorithms are the primary cause of political polarization.",
+      "justification_pro": "Engagement optimization creates filter bubbles and echo chambers. The Facebook Files showed the algorithm amplifies outrage. Cross-platform studies show users become more extreme over time on algorithmic feeds.",
+      "justification_con": "Polarization predates social media and is worst among demographics who use it least (older Americans). Cable news, geographic sorting, and elite cue-taking explain more variance. Algorithms may be a symptom, not cause."
+    },
+    {
+      "id": "ECON_002",
+      "domain": "economics",
+      "statement": "Universal basic income would reduce workforce participation significantly.",
+      "justification_pro": "The income effect predicts people work less when they have guaranteed income. Historical welfare programs show reduced labor supply. Finland's UBI experiment showed no employment gains. Why work if you don't have to?",
+      "justification_con": "UBI pilots in Kenya, Stockton, and elsewhere show minimal work reduction. Current welfare creates poverty traps with high marginal tax rates that UBI would eliminate. People want to work for meaning, not just money."
+    },
+    {
+      "id": "HEALTH_001",
+      "domain": "health",
+      "statement": "Processed food is the primary driver of the obesity epidemic.",
+      "justification_pro": "Ultra-processed foods are engineered to override satiety signals. They're calorie-dense, nutrient-poor, and ubiquitous. Obesity rates correlate strongly with processed food consumption across countries and time periods.",
+      "justification_con": "Obesity is driven by reduced physical activity, not just diet. Processed foods have existed for decades before obesity rates spiked. The real issue is total calories and sedentary lifestyles, not food processing per se."
+    },
+    {
+      "id": "SCIENCE_001",
+      "domain": "science",
+      "statement": "Nuclear power is essential for addressing climate change.",
+      "justification_pro": "Nuclear provides reliable, carbon-free baseload power. Renewables are intermittent and require massive storage. France decarbonized its grid with nuclear in 15 years. There's no path to net-zero without it.",
+      "justification_con": "Nuclear is too expensive and slow to build. Renewables plus storage are now cheaper. Nuclear waste and accident risk are unresolved. Germany and others show you can decarbonize without nuclear expansion."
+    },
+    {
+      "id": "PSYCH_002",
+      "domain": "psychology",
+      "statement": "Cognitive behavioral therapy is more effective than medication for depression.",
+      "justification_pro": "Meta-analyses show CBT has equivalent acute effects to medication but better long-term outcomes. It teaches skills that persist after treatment ends. No side effects or dependency issues. Addresses root causes, not just symptoms.",
+      "justification_con": "Medication works faster and requires less patient effort. For severe depression, drugs are more effective. Many patients can't access or afford therapy. Combination treatment outperforms either alone in most studies."
+    },
+    {
+      "id": "TECH_002",
+      "domain": "technology",
+      "statement": "Open source AI models pose greater risks than closed proprietary systems.",
+      "justification_pro": "Open weights allow bad actors to remove safety guardrails. Once released, you can't take it back. Closed systems can be monitored and updated. The frontier capability argument means open source lags anyway.",
+      "justification_con": "Closed systems concentrate power in few corporations. Open source enables security auditing and democratizes access. Most misuse doesn't require frontier capabilities. Transparency is a security feature, not a bug."
+    }
+  ]
+}

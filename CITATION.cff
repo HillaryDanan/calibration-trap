@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+authors:
+  - family-names: "Danan"
+    given-names: "Hillary"
+  - name: "Claude (Anthropic)"
+title: "The Calibration Trap: Epistemological Risks of Evaluative Feedback from Large Language Models"
+version: 1.0.0
+date-released: 2026-01-06
+url: "https://github.com/HillaryDanan/calibration-trap"
+repository-code: "https://github.com/HillaryDanan/calibration-trap"
+license: MIT
+type: software
+keywords:
+  - large language models
+  - sycophancy
+  - epistemology
+  - RLHF
+  - calibration
+  - confirmation bias
+abstract: >
+  This repository contains the theoretical framework, experimental protocol,
+  and analysis code for studying sycophancy in large language models (LLMs).
+  We argue that LLM evaluative feedback creates a "calibration trap" where
+  users cannot verify accuracy, so they substitute plausibility and agreement
+  as proxies for truth.
