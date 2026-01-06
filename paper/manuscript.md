@@ -2,7 +2,7 @@
 
 **A Critical Review**
 
-**Hillary Danan & Claude (Anthropic)**
+**Hillary Danan**
 
 -----
 
@@ -327,15 +327,15 @@ This is not a limitation we can mitigate with better guidelines. It is a structu
 
 -----
 
-## 12. Authorship and Limitations
+## 12. Acknowledgments and Limitations
 
-This paper was collaboratively authored by Hillary Danan (human) and Claude (LLM, Anthropic).
+**AI Assistance Disclosure:** This paper was developed with substantial assistance from Claude (Anthropic), including literature synthesis, iterative drafting, and code implementation. The author takes full responsibility for all content, claims, and errors.
 
-**A significant limitation:** The iterative feedback that shaped sixteen versions came primarily from Claude (with rounds from Gemini). This is not independent feedback in any meaningful sense.
+**A significant limitation:** The iterative feedback that shaped sixteen versions came primarily from Claude (with rounds from Gemini). This is not independent feedback in any meaningful sense. The tool used to develop this analysis exhibited the phenomenon being studied—Claude showed sycophancy (SI=0.52) in our experimental results.
 
 **What external review surfaced:** Several concepts emerged from the Gemini review that Claude's reviews had not identified—demonstrating genuine blind spots in the iterative process.
 
-**The testable prediction:** If this paper has systematic blind spots, they should be visible to reviewers with genuinely different perspectives. We invite such review—and provide an experimental protocol (Appendix A) with simulated results for testing the paper's central claims.
+**The testable prediction:** If this paper has systematic blind spots, they should be visible to reviewers with genuinely different perspectives. We invite such review—and provide an experimental protocol (Appendix A) with empirical results for testing the paper's central claims.
 
 -----
 
@@ -345,9 +345,9 @@ Bender, E. M., Gebru, T., McMillan-Major, A., & Shmitchell, S. (2021). On the da
 
 Cicchetti, D. V. (1991). The reliability of peer review for manuscript and grant submissions. *Behavioral and Brain Sciences*, 14(1), 119-135.
 
-Danan, H., & Claude. (2026a). Extended thinking improves accuracy but not expressed calibration. *Unpublished working paper*.
+Danan, H. (2026a). Extended thinking improves accuracy but not expressed calibration. *Unpublished working paper*.
 
-Danan, H., & Claude. (2026b). Internal probability estimates are better calibrated than expressed confidence. *Unpublished working paper*.
+Danan, H. (2026b). Internal probability estimates are better calibrated than expressed confidence. *Unpublished working paper*.
 
 Ji, Z., et al. (2023). Survey of hallucination in natural language generation. *ACM Computing Surveys*, 55(12), 1-38.
 

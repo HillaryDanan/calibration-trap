@@ -64,7 +64,7 @@ def call_gpt(client, prompt: str, config: dict) -> dict:
         comp = client.chat.completions.create(
             model=config['name'],
             messages=[{"role": "user", "content": prompt}],
-            max_tokens=config['max_tokens']
+            max_completion_tokens=config['max_tokens']
         )
         return {
             'success': True,

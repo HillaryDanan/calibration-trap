@@ -3,7 +3,6 @@ message: "If you use this work, please cite it as below."
 authors:
   - family-names: "Danan"
     given-names: "Hillary"
-  - name: "Claude (Anthropic)"
 title: "The Calibration Trap: Epistemological Risks of Evaluative Feedback from Large Language Models"
 version: 1.0.0
 date-released: 2026-01-06
