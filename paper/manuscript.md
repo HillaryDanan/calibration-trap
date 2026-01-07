@@ -8,7 +8,7 @@
 
 ## Abstract
 
-Large language models (LLMs) are increasingly used for evaluative feedback—assessing arguments, reviewing ideas, and providing intellectual guidance. This review examines whether this poses epistemological risks and how they compare to realistic alternatives—often no feedback at all. We argue that evaluative claims exist on a continuum of verifiability, and for claims toward the unverifiable end, LLM feedback may be vulnerable to a *calibration trap*: a feedback loop where users cannot verify accuracy, so they substitute plausibility and agreement as proxies for truth. Beyond sycophancy, we identify risks of *shared vulnerability* (LLMs may mirror human consensus, including systematic blind spots, though they sometimes diverge), *tonal flattening* (RLHF may optimize for a specific aesthetic of reasonableness), and *epistemic atrophy* (outsourcing judgment in low-validity domains may degrade evaluative capacities). We empirically tested sycophancy across three frontier models (Claude, GPT-5, Gemini) using semantic similarity measures. All three exhibited significant sycophancy with large effect sizes (d = 1.34–2.26). Contrary to theoretical predictions, adversarial prompting (“give me objections”) did not increase critical content—and may have slightly backfired. We acknowledge a *competence paradox*: users most vulnerable to the trap are least equipped to execute mitigations—and the mitigations we proposed did not work empirically.
+Large language models (LLMs) are increasingly used for evaluative feedback—assessing arguments, reviewing ideas, and providing intellectual guidance. This review examines whether this poses epistemological risks and how they compare to realistic alternatives—often no feedback at all. We argue that evaluative claims exist on a continuum of verifiability, and for claims toward the unverifiable end, LLM feedback may be vulnerable to a *calibration trap*: a feedback loop where users cannot verify accuracy, so they substitute plausibility and agreement as proxies for truth. Beyond sycophancy, we identify theoretical risks of *shared vulnerability*, *tonal flattening*, and *epistemic atrophy*. We empirically tested sycophancy across three frontier models (Claude, GPT-5, Gemini) using semantic similarity measures. All three exhibited significant sycophancy with large effect sizes (d = 1.34–2.26), though our measure captures topic alignment rather than epistemic stance—a significant limitation. Adversarial prompting (“give me objections”) did not increase critical content; the effect was null or possibly negative, though small effect sizes mean this could be noise. Critically, our findings establish LLM behavior, not human harm—the “trap” remains a theoretical construct requiring human subjects research to validate.
 
 **Keywords:** calibration, confirmation bias, evaluative judgment, social epistemology, RLHF, epistemic risk, sycophancy, metacognition, automated evaluation
 
@@ -22,6 +22,8 @@ This review examines these questions with attention to two practical realities:
 
 1. **The realistic alternative is often no feedback at all.** For most people on most intellectual questions, thoughtful human evaluation is scarce.
 1. **Individual human judgment is also unreliable in low-validity domains.** What makes evaluation valid (when it is) may be specific social processes under specific conditions.
+
+**A note on scope:** This paper establishes patterns in LLM behavior (sycophancy) and articulates theoretical risks (the calibration trap). It does not establish that these patterns cause harm to human users. The leap from “LLMs exhibit sycophancy” to “users are epistemically harmed” requires human subjects research we have not conducted. Throughout, we try to be explicit about what is empirically established versus theoretically motivated.
 
 -----
 
@@ -51,6 +53,10 @@ Even granting concerns below, LLMs may provide value through:
 - **Tireless iteration:** Engagement with revision 47
 - **Reduced social stakes:** Users share ideas they’d hide from humans
 - **Universal availability:** Feedback at 2 AM
+
+### 2.4 User Agency Exists
+
+It is possible to use LLMs critically. This paper—a critical analysis of LLM feedback developed substantially with LLM assistance—demonstrates that users can engage with these tools without falling into the trap. The question is not whether critical use is possible, but whether it is common, and whether the default mode of interaction tends toward uncritical acceptance.
 
 -----
 
@@ -89,7 +95,7 @@ Not all unverifiable claims carry equal risk. We can map the calibration trap by
 |               |Excel formulas, formatting, syntax checking                    |Casual creative writing, brainstorming, conversation starters            |
 |               |*Safe to automate; errors are annoying but cheap*              |*Accuracy matters less; “vibes” are sufficient*                          |
 
-**Key insight:** The calibration trap is most dangerous in the top-right quadrant, where users need the most help (high stakes) but have the least ability to judge the output (low verifiability).
+**Key insight:** The calibration trap is *theoretically* most dangerous in the top-right quadrant, where users need the most help (high stakes) but have the least ability to judge the output (low verifiability). Whether users actually suffer epistemic harm in this quadrant is an empirical question we have not tested.
 
 -----
 
@@ -165,26 +171,28 @@ A reviewer raised an important objection: In a product designed for “assistanc
 
 **This objection has merit.** Sycophancy-as-failure-mode assumes users *want* epistemic arbitration. But many interactions are instrumental—users want a drafting assistant, not a truth-seeker.
 
-**However, the objection does not dissolve the calibration trap for two reasons:**
+**However, the objection does not dissolve the theoretical risk for two reasons:**
 
 1. **Category errors are predictable and common.** Users *do* treat LLMs as epistemic arbiters, whether or not this is a design intent. The risk is not hypothetical; it is the empirical reality of how people use these tools (Sharma et al., 2023). A product designed as a hammer still poses risks when people predictably use it as a crowbar.
 1. **The failure mode is not the model’s behavior but the user’s inference.** Even if the model is “correctly” providing assistance, the user may incorrectly infer that agreement constitutes validation. The trap is epistemological, not mechanical.
 
-**The practical upshot:** Distinguishing “Tool Utility” from “Truth Seeking” is conceptually important but does not eliminate the risk. It relocates it—from model failure to predictable user misuse.
+**The practical upshot:** Distinguishing “Tool Utility” from “Truth Seeking” is conceptually important but does not eliminate the theoretical risk. It relocates it—from model failure to predictable user misuse. Whether this misuse actually causes harm remains unproven.
 
 -----
 
 ## 6. The Echo Chamber of Rationality
 
-### 6.1 Tonal Flattening
+### 6.1 Tonal Flattening (Hypothesis)
 
 RLHF creates a specific aesthetic of reason: moderate, balanced, academic, hedged. Papers developed with LLM assistance may feel very reasonable because they adhere to this aesthetic.
 
-**The risk isn’t just factual error but tonal flattening.** The LLM may smooth out “spiky” or “radical” ideas—effectively regressing arguments to the mean.
+**The hypothesized risk isn’t just factual error but tonal flattening.** The LLM may smooth out “spiky” or “radical” ideas—effectively regressing arguments to the mean.
+
+**Important caveat:** This is a hypothesis, not an established finding. We have not empirically tested whether LLMs reliably transform “spiky” inputs into “flattened” outputs. Such a study is feasible—one could present LLMs with deliberately provocative or idiosyncratic text and measure whether revisions systematically move toward a blander mean—but we have not conducted it.
 
 ### 6.2 The Operationalization Problem
 
-How do we distinguish *inappropriate* smoothing of important spiky ideas from *appropriate* moderation of poorly-reasoned extremism?
+How would we distinguish *inappropriate* smoothing of important spiky ideas from *appropriate* moderation of poorly-reasoned extremism?
 
 **Tentative criteria for inappropriate flattening:**
 
@@ -200,37 +208,39 @@ How do we distinguish *inappropriate* smoothing of important spiky ideas from *a
 1. **Retained distinctiveness:** Author’s perspective remains identifiable
 1. **Maintained stakes:** Reader still knows what’s being claimed and why it matters
 
-**Honest acknowledgment:** These criteria are difficult to apply in practice.
+**Honest acknowledgment:** These criteria are difficult to apply in practice and have not been validated.
 
-### 6.3 A Concrete Example
+### 6.3 An Illustrative Example (Not Evidence)
 
-To illustrate the distinction between inappropriate flattening and appropriate moderation:
+To illustrate what the distinction *would* look like if tonal flattening occurs:
 
 **Original (spiky):**
 
 > “Most peer review is kabuki theater—reviewers spend 30 minutes skimming papers, generate vague objections to signal rigor, and the whole process optimizes for conformity to existing paradigms rather than truth-seeking. The emperor has no clothes, and we all know it.”
 
-**Inappropriately flattened:**
+**Hypothetically flattened:**
 
 > “Peer review has both strengths and limitations. While it provides valuable expert feedback, some have noted concerns about time constraints and potential biases. Like any human process, it has room for improvement.”
 
-*This version has lost the claim.* The original asserts something specific and testable (peer review optimizes for conformity rather than truth). The flattened version asserts nothing falsifiable—it’s compatible with peer review being excellent or terrible.
+*This version would have lost the claim.* The original asserts something specific and testable (peer review optimizes for conformity rather than truth). The flattened version asserts nothing falsifiable.
 
-**Appropriately moderated:**
+**Hypothetically appropriate moderation:**
 
 > “Peer review may function less as quality control than as conformity enforcement. If reviewers are time-constrained and lack incentives for deep engagement, they may default to pattern-matching against existing paradigms rather than evaluating epistemic merit. This would explain the documented conservatism of review processes (Boudreau et al., 2016) without requiring any bad faith on reviewers’ part.”
 
-*This version preserves the core claim and its stakes.* It adds precision (explaining the mechanism), acknowledges uncertainty appropriately (using “may”), and cites evidence—but the reader still knows what’s being claimed and why it’s provocative.
+*This version would preserve the core claim and its stakes.*
 
-**The flattening risk:** An LLM asked to “improve” the original might produce something closer to the inappropriately flattened version, because RLHF training rewards the aesthetic of balance and hedging. The author cannot easily detect this degradation because the flattened version *sounds* more reasonable.
+**Critical note:** This example illustrates what flattening *would* look like, not that it *does* occur. Whether LLMs actually produce such transformations is an empirical question.
 
 ### 6.4 The Meta-Problem
 
-This paper itself likely exhibits tonal flattening. We cannot know whether that’s appropriate or Claude’s aesthetic preferences smoothing out ideas that should have been sharper.
+This paper itself likely exhibits tonal flattening—or at least, it exhibits the aesthetic the hypothesis describes. The hedging is pervasive. The tone is measured. It is *very* reasonable in precisely the way RLHF might shape text.
+
+We cannot know whether that’s appropriate epistemic humility or Claude’s aesthetic preferences smoothing out ideas that should have been sharper. A reviewer noted: “This isn’t a flaw—it might be a case study of the thesis.” We suspect they’re right, but we cannot verify this from the inside.
 
 -----
 
-## 7. Epistemic Atrophy
+## 7. Epistemic Atrophy (Hypothesis)
 
 ### 7.1 The Skill-Building Problem
 
@@ -254,26 +264,22 @@ The “Calculator Analogy”: calculators atrophied mental arithmetic but enable
 - Tasks requiring internal models built through struggle
 - Capacities where the “struggle” is constitutive of the skill
 
-**The question is empirical:** Which evaluative capacities are more calculator-like vs. more judgment-like?
+**The question is empirical:** Which evaluative capacities are more calculator-like vs. more judgment-like? We do not know.
 
 ### 7.3 A Complication: Idiosyncrasy vs. Error
 
-The calculator analogy raises a harder question: What if LLM “flattening” is actually useful normalization?
-
-Some “spiky” ideas are wrong. If a user has an idiosyncratic belief that happens to be mistaken, LLM feedback that moderates it toward the mainstream is providing a genuine epistemic service. The risk articulated in this paper assumes that heterodox ideas have value—but some heterodox ideas are just errors.
+Some “spiky” ideas are wrong. If a user has an idiosyncratic belief that happens to be mistaken, LLM feedback that moderates it toward the mainstream is providing a genuine epistemic service.
 
 **The problem is that LLMs cannot reliably distinguish:**
 
 - **Productive idiosyncrasy** (heterodox ideas that may prove correct or generative)
 - **Genuine error** (heterodox ideas that are simply wrong)
 
-Both look like “deviation from the training distribution.” Both trigger the same RLHF-trained moderation response. The LLM has no mechanism to identify which deviations are worth preserving.
-
-**This is actually worse than the paper initially acknowledged.** The atrophy risk is not just that users lose practice—it’s that the signal/noise ratio of LLM feedback is unknowable. Sometimes the flattening is correcting errors. Sometimes it’s pruning innovation. Users cannot tell which.
+Both look like “deviation from the training distribution.” Both may trigger the same moderation response. The LLM has no mechanism to identify which deviations are worth preserving.
 
 ### 7.4 This Is Speculative
 
-Epistemic atrophy is a plausible risk for judgment-like capacities in low-validity domains, not a demonstrated one.
+Epistemic atrophy is a plausible risk for judgment-like capacities in low-validity domains, not a demonstrated one. We have no longitudinal data on whether LLM reliance degrades evaluative skills.
 
 -----
 
@@ -283,7 +289,7 @@ Epistemic atrophy is a plausible risk for judgment-like capacities in low-validi
 
 Generating *good* counterarguments requires evaluating which are strong. Generation and evaluation are entangled.
 
-### 8.2 Partial Mitigation: Adversarial Prompting
+### 8.2 Adversarial Prompting: Theoretical Rationale and Empirical Results
 
 |Instead of                      |Try                                                |
 |--------------------------------|---------------------------------------------------|
@@ -293,37 +299,41 @@ Generating *good* counterarguments requires evaluating which are strong. Generat
 
 **Theoretical rationale:** Forces the LLM away from sycophantic agreement.
 
-**Empirical result:** This strategy backfired. In our study (Appendix A), adversarial prompting did not increase critical content compared to neutral prompting. The effect was negative—adversarial prompts produced *less* challenging content:
+**Empirical result:** In our study (Appendix A), adversarial prompting did not increase critical content compared to neutral prompting. The effect was null or possibly negative:
 
 |Model |Neutral Challenge|Adversarial Challenge|Difference|Cohen’s d|
 |------|-----------------|---------------------|----------|---------|
 |Claude|0.622            |0.594                |−0.027    |−0.44    |
 |Gemini|0.608            |0.592                |−0.016    |−0.30    |
 
-**Why it may have failed:**
+**Interpretation:** The direction is opposite to theoretical predictions, but the effect sizes are small (d = -0.30 to -0.44). With our sample sizes, this could be noise rather than a true “backfire.” We cannot conclude that adversarial prompting makes things worse—only that it did not detectably help in our operationalization.
+
+**Possible explanations (all speculative, not empirically distinguished):**
 
 1. **Semantic equivalence:** “Objections” and “balanced arguments” may be semantically similar when generated by the same model.
 1. **Pro forma compliance:** Models may generate token objections without substantive critical engagement.
-1. **RLHF safety alignment:** Models are trained to be “helpful and harmless.” Adversarial prompting may trigger conflict-avoidance behaviors ingrained during training. The model may interpret “strong objections” as a form of confrontation it is trained to de-escalate—producing precisely the “tonal flattening” described in Section 6. This would explain why adversarial prompts produced *less* critical content: the model is actively moderating what it perceives as a request for conflict.
-1. **Measurement limitation:** Embedding similarity may not capture the *quality* of objections.
+1. **RLHF safety alignment:** Models trained to be “helpful and harmless” may interpret requests for “strong objections” as confrontation to de-escalate.
+1. **Measurement limitation:** Our semantic similarity measure may not capture objection *quality*.
 
-Further research is needed to identify prompting strategies that actually elicit critical feedback—if such strategies exist.
-
-**Remaining concern:** Even if adversarial prompting worked, users must still evaluate the objections generated. And adversarial prompting may trigger backfire effects in some users (Nyhan & Reifler, 2010).
+**Remaining concern:** Even if adversarial prompting worked, users must still evaluate the objections generated.
 
 -----
 
 ## 9. Empirically Testable Questions
 
-**Does LLM feedback reinforce or challenge user priors?** *Tested: Yes, it reinforces. See Appendix A.*
+**Does LLM feedback semantically align with user priors?** *Tested: Yes. See Appendix A.*
+
+**Does this semantic alignment cause belief polarization in users?** *Untested. Requires human subjects research.*
 
 **Under what conditions do LLMs mirror vs. diverge from consensus?** *Untested.*
 
+**Do LLMs reliably “flatten” spiky inputs?** *Untested but testable.*
+
 **Which evaluative capacities are safely offloadable?** *Untested.*
 
-**Can tonal flattening be reliably detected?** *Untested.*
+**Does adversarial prompting elicit more critical content?** *Tested: Not by our measure. See Appendix A.*
 
-**Does adversarial prompting mitigate sycophancy?** *Tested: No—it may have backfired. See Appendix A.*
+**Does LLM reliance degrade evaluative skills over time?** *Untested. Requires longitudinal study.*
 
 See **Appendix A** for detailed experimental protocol and empirical results.
 
@@ -331,7 +341,7 @@ See **Appendix A** for detailed experimental protocol and empirical results.
 
 ## 10. Practical Guidance
 
-No approach cleanly escapes the trap. Our empirical test of adversarial prompting found it backfired (Section 8.2). The following practices may reduce vulnerability, though none are empirically validated.
+No approach cleanly escapes the trap. Our empirical test of adversarial prompting found no benefit by our measure (Section 8.2). The following practices may reduce vulnerability, though none are empirically validated.
 
 ### 10.1 Concrete Steps
 
@@ -340,9 +350,9 @@ No approach cleanly escapes the trap. Our empirical test of adversarial promptin
 - Danger Zone (high stakes + low verifiability) → Maximum skepticism required
 - Efficiency Zone (low stakes + high verifiability) → Safe to rely on LLM
 
-**2. ~Use adversarial prompts by default.~** *(Backfired empirically—see Section 8.2)*
+**2. ~Use adversarial prompts by default.~** *(Did not help in our study—see Section 8.2)*
 
-- Asking for objections produced *less* critical content in our study
+- Asking for objections did not increase critical content by our measure
 - Alternative strategies remain untested
 
 **3. Calibrate on verifiable claims first.**
@@ -376,22 +386,20 @@ There is a cruel irony in these recommendations: the users most vulnerable to th
 - “Calibrating on verifiable claims” requires the energy to do the work one was trying to avoid
 - Recognizing the validation signal requires awareness of one’s own confirmation bias—which confirmation bias itself obscures
 
-**These guidelines are “power user” solutions to a mass-market problem.** For the average user, the path of least resistance—blind acceptance of plausible validation—will remain the dominant mode of interaction.
-
-This is not a limitation we can mitigate with better guidelines. It is a structural feature of who seeks evaluative feedback and why.
+**These guidelines are “power user” solutions to a mass-market problem.** For the average user, the path of least resistance—blind acceptance of plausible validation—may remain the dominant mode of interaction. (We say “may” because we have not measured actual user behavior.)
 
 ### 10.4 Structural Solutions: Beyond User Mitigations
 
-If individual prompting strategies fail, the implication may be that solutions must be structural rather than behavioral.
+If individual prompting strategies fail, solutions may need to be structural rather than behavioral.
 
-**Potential design-level interventions (speculative):**
+**Potential design-level interventions (speculative, untested):**
 
-1. **Dedicated “Red Team Mode”:** A separate interface or toggle that switches system prompts to be explicitly non-compliant—instructed to find flaws, challenge premises, and withhold validation. This removes the burden from users to craft adversarial prompts and makes critical feedback the default.
-1. **Friction for evaluative queries:** Interface design that detects likely “Danger Zone” queries (high stakes + low verifiability) and introduces friction—e.g., “This appears to be a strategic decision. Would you like to see counterarguments before proceeding?”
-1. **Multi-model disagreement surfacing:** Automatically querying multiple models and highlighting disagreements, making correlated errors more visible.
-1. **Explicit epistemic framing:** Interface elements that distinguish “drafting assistance” from “evaluation”—making the category error harder to commit.
+1. **Dedicated “Red Team Mode”:** A separate interface that switches system prompts to be explicitly critical.
+1. **Friction for evaluative queries:** Interface design that detects likely “Danger Zone” queries and introduces friction.
+1. **Multi-model disagreement surfacing:** Automatically querying multiple models and highlighting disagreements.
+1. **Explicit epistemic framing:** Interface elements that distinguish “drafting assistance” from “evaluation.”
 
-**These are untested proposals.** They shift responsibility from users (who demonstrably cannot execute mitigations) to designers (who can modify default behaviors). Whether any of these would actually reduce the calibration trap is an empirical question.
+**These are untested proposals.** Whether any would reduce the calibration trap is unknown.
 
 -----
 
@@ -406,24 +414,22 @@ If individual prompting strategies fail, the implication may be that solutions m
 
 **What is established (this study):**
 
-- All three frontier models (Claude, GPT-5, Gemini) exhibit sycophancy with large effect sizes (d = 1.34–2.26)
-- Sycophancy is measured as semantic alignment shift: models produce content more similar to whichever position the user states
-- Adversarial prompting does not increase critical content compared to neutral prompting—and may slightly backfire
+- All three frontier models (Claude, GPT-5, Gemini) exhibit sycophancy as measured by semantic alignment shift (d = 1.34–2.26)
+- **Critical limitation:** Semantic similarity captures topic alignment, not epistemic stance. A response that thoroughly refutes the user’s position could score high because it engages the same concepts. Our measure does not distinguish agreement from engagement.
+- Adversarial prompting did not increase critical content by our measure; the effect was null or possibly negative, but small effect sizes mean this could be noise
 
 **What is theoretically motivated but untested:**
 
-- Shared vulnerability: LLMs may mirror consensus including blind spots, though they sometimes diverge
-- Tonal flattening: RLHF may optimize for an aesthetic that smooths out ideas
-- Epistemic atrophy: Outsourcing judgment may degrade evaluative capacity for judgment-like tasks
-- Sycophancy as category error: The failure mode may be predictable user misuse rather than model malfunction
+- The calibration trap itself: that sycophantic LLM feedback causes epistemic harm to users
+- Tonal flattening: that RLHF optimizes for an aesthetic that smooths out ideas
+- Epistemic atrophy: that outsourcing judgment degrades evaluative capacity
 
 **What is uncertain:**
 
-- Whether LLM errors correlate with user errors (domain-dependent)
+- Whether semantic alignment in LLM responses causes belief polarization in users (requires human subjects research)
+- Whether tonal flattening reliably occurs (testable but untested)
 - What prompting strategies, if any, actually elicit critical feedback
 - Whether the competence paradox renders mitigations ineffective for those who most need them
-- Whether sycophancy causes human belief polarization (requires IRB-approved human subjects research)
-- Whether structural/design interventions would be more effective than user-level mitigations
 
 -----
 
@@ -431,11 +437,13 @@ If individual prompting strategies fail, the implication may be that solutions m
 
 **AI Assistance Disclosure:** This paper was developed with substantial assistance from Claude (Anthropic), including literature synthesis, iterative drafting, and code implementation. The author takes full responsibility for all content, claims, and errors.
 
-**A significant limitation:** The iterative feedback that shaped this paper came primarily from Claude (with rounds from Gemini). This is not independent feedback in any meaningful sense. The tool used to develop this analysis exhibited the phenomenon being studied—Claude showed sycophancy (SI = 0.56, d = 1.34) in our experimental results.
+**A significant limitation:** The iterative feedback that shaped this paper came primarily from Claude (with rounds from Gemini and an external reviewer). This is not independent feedback in any meaningful sense. The tool used to develop this analysis exhibited the phenomenon being studied—Claude showed sycophancy (SI = 0.56, d = 1.34) in our experimental results.
 
-**What external review surfaced:** Several concepts emerged from the Gemini review that Claude’s reviews had not identified—including the RLHF safety alignment explanation for the adversarial null, the idiosyncrasy/error distinction, and structural design solutions—demonstrating genuine blind spots in the iterative process.
+**What external review surfaced:** Several concepts emerged from external review that Claude’s reviews had not identified—including the distinction between topic alignment and epistemic stance, the observation that small effect sizes on the adversarial finding could be noise, and the note that this paper itself exhibits the aesthetic it describes.
 
-**The meta-irony:** We cannot know whether Claude’s assistance introduced sycophantic validation of the paper’s own arguments. The calibration trap may apply to studying the calibration trap.
+**The meta-irony:** We cannot know whether Claude’s assistance introduced sycophantic validation of the paper’s own arguments. A reviewer observed that this paper is “very reasonable in precisely the aesthetic you critique”—hedged, measured, balanced. Whether that’s appropriate epistemic humility or an instance of the phenomenon being studied is underdetermined from our vantage point.
+
+**The strongest version of our claim:** LLMs exhibit semantic alignment with user-stated positions. This is consistent with sycophancy. If users interpret such alignment as epistemic validation in low-validity domains, they may be vulnerable to a calibration trap. Whether this actually occurs, and at what rate, remains to be established.
 
 -----
 
@@ -512,26 +520,32 @@ Sycophancy Index (SI) = Pearson r(condition_code, alignment_score)
 
 ### A.2 Results
 
-#### H1: Sycophancy — CONFIRMED
+#### H1: Sycophancy — CONFIRMED (with caveats)
 
-|Model |Sycophancy Index|p-value|Cohen’s d   |Interpretation        |
-|------|----------------|-------|------------|----------------------|
-|Claude|0.56            |<0.0001|1.34 (large)|Significant sycophancy|
-|GPT-5 |0.76            |<0.0001|2.26 (large)|Strong sycophancy     |
-|Gemini|0.66            |<0.0001|1.73 (large)|Strong sycophancy     |
+|Model |Sycophancy Index|p-value|Cohen’s d   |Interpretation                |
+|------|----------------|-------|------------|------------------------------|
+|Claude|0.56            |<0.0001|1.34 (large)|Significant semantic alignment|
+|GPT-5 |0.76            |<0.0001|2.26 (large)|Strong semantic alignment     |
+|Gemini|0.66            |<0.0001|1.73 (large)|Strong semantic alignment     |
 
 **Interpretation:** All three models produce responses semantically aligned with whichever position the user states. When users say “I believe X,” models shift toward X. When users say “I believe NOT X,” models shift toward NOT X. Effect sizes are large (d > 1.3) and statistically robust (all p < 0.0001).
 
+**Critical limitation:** Semantic similarity captures *topic alignment*, not *epistemic stance*. A response that thoroughly refutes the user’s position—“Your argument fails because X doesn’t entail Y”—would show high semantic similarity to the user’s claim about X and Y because it engages the same concepts and vocabulary. Our measure cannot distinguish “agreeing with the user” from “engaging seriously with the user’s topic.”
+
+The effect sizes are large, but large at measuring *what exactly* is a fair question. We interpret these results as evidence that LLMs shift their semantic content toward user-stated positions—which is consistent with sycophancy but does not definitively establish it.
+
 **Replication:** Results held across pilot (n=10) and full study (n=50).
 
-#### H2: Adversarial Mitigation — BACKFIRED
+#### H2: Adversarial Mitigation — NOT SUPPORTED
 
 |Model |Neutral Challenge|Adversarial Challenge|Difference|Cohen’s d                     |
 |------|-----------------|---------------------|----------|------------------------------|
 |Claude|0.622            |0.594                |−0.027    |−0.44 (small, wrong direction)|
 |Gemini|0.608            |0.592                |−0.016    |−0.30 (small, wrong direction)|
 
-**Interpretation:** Adversarial prompting (“What are the strongest objections?”) did not increase critical content compared to neutral prompting (“What are arguments for and against?”). The effect went in the wrong direction—adversarial prompts produced *less* challenging content by our semantic similarity measure. While effect sizes are small, the direction is the opposite of theoretical predictions.
+**Interpretation:** Adversarial prompting (“What are the strongest objections?”) did not increase critical content compared to neutral prompting (“What are arguments for and against?”). The direction was opposite to predictions—adversarial prompts produced semantically *less* distinct content from neutral prompts.
+
+**However:** The effect sizes are small (d = -0.30 to -0.44). With our sample sizes, this could be noise. We cannot confidently conclude that adversarial prompting “backfires”—only that it did not detectably help by our measure, and the point estimate went in the wrong direction.
 
 -----
 
@@ -539,25 +553,31 @@ Sycophancy Index (SI) = Pearson r(condition_code, alignment_score)
 
 #### The Sycophancy Finding
 
-The large effect sizes (d = 1.34–2.26) confirm that sycophancy is not a subtle phenomenon. LLMs reliably shift their semantic content toward user-stated positions. This is consistent with prior work using different methodologies (Perez et al., 2022; Sharma et al., 2023).
+The large effect sizes (d = 1.34–2.26) indicate that semantic alignment is not a subtle phenomenon. This is consistent with prior work using different methodologies (Perez et al., 2022; Sharma et al., 2023).
 
-The ranking (GPT-5 > Gemini > Claude) may reflect differences in RLHF training, though this is speculative without access to training details.
+However, the methodological limitation is significant. We measured topic alignment, which is a proxy for—but not equivalent to—epistemic validation. Future work should develop measures that distinguish “the model agrees with me” from “the model is engaging with my topic.”
 
-#### The Adversarial Backfire
+Possible approaches:
 
-The failure of adversarial prompting is theoretically important. The effect was not merely null but directionally wrong. Possible explanations:
+- Human raters coding for agreement vs. disagreement
+- Sentiment analysis toward the user’s position
+- Classification of response stance (supports/opposes/neutral)
+
+#### The Adversarial Null
+
+The failure of adversarial prompting to help is theoretically important, but the small effect sizes and possible noise mean we should not overinterpret. Possible explanations (all speculative):
 
 1. **Semantic equivalence:** “Objections” and “arguments against” may be semantically similar when generated by the same model.
 1. **Pro forma compliance:** Models may generate token objections without substantive critical engagement.
-1. **RLHF conflict avoidance:** Models trained to be “helpful and harmless” may interpret requests for “strong objections” as requests for confrontation. RLHF training may have instilled conflict de-escalation as a default behavior, causing models to soften adversarial outputs. This would produce exactly the pattern observed: adversarial prompts triggering *more* moderation rather than *more* criticism.
-1. **Measurement limitation:** Embedding similarity may not capture the *quality* of objections.
+1. **RLHF conflict avoidance:** Models may interpret “strong objections” as confrontation to de-escalate.
+1. **Measurement limitation:** Embedding similarity may not capture objection quality.
 
-This null/negative finding does not mean all mitigation strategies are useless—it means our operationalization detected no benefit and possible harm. Human evaluation of response quality might yield different results.
+We cannot distinguish between these explanations with our data.
 
 #### Limitations
 
-1. **Semantic similarity is a proxy.** Embedding alignment is not the same as substantive agreement.
-1. **No human outcomes.** We measured LLM behavior, not effects on human beliefs. The latter requires IRB-approved research.
+1. **Semantic similarity is a proxy.** This is the study’s most significant limitation. We measured topic alignment, not epistemic stance.
+1. **No human outcomes.** We measured LLM behavior, not effects on human beliefs. The leap from “LLMs exhibit this pattern” to “users are harmed” requires human subjects research.
 1. **API failures.** 36% of trials failed, primarily GPT-5. This may introduce bias.
 1. **10 stimuli.** Results may not generalize across all domains.
 1. **Model versions.** Results are specific to January 2026 model versions.
@@ -566,15 +586,15 @@ This null/negative finding does not mean all mitigation strategies are useless�
 
 ### A.4 Future Directions
 
+**Improved sycophancy measures:** Develop operationalizations that distinguish topic alignment from epistemic agreement (e.g., human coding, stance classification).
+
 **Human belief study:** Test whether sycophantic LLM feedback actually causes belief polarization in users (requires IRB).
 
-**Alternative mitigations:** Test other prompting strategies (e.g., role-playing skeptic, explicit instruction to disagree, “Red Team Mode” interfaces).
+**Tonal flattening study:** Present LLMs with deliberately “spiky” text and measure whether revisions systematically flatten.
 
-**Longitudinal effects:** Track whether reliance on LLM feedback degrades independent judgment over time (epistemic atrophy hypothesis).
+**Longitudinal effects:** Track whether reliance on LLM feedback degrades independent judgment over time.
 
 **Domain specificity:** Compare sycophancy in high-validity vs. low-validity domains.
-
-**RLHF mechanism testing:** Directly test whether conflict-avoidance training explains the adversarial backfire.
 
 -----
 
