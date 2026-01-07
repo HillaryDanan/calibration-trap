@@ -13,13 +13,13 @@ We tested whether LLMs agree with users regardless of position (sycophancy). **T
 
 | Model | Sycophancy Index | Effect Size | p-value |
 |-------|------------------|-------------|---------|
-| Claude (claude-sonnet-4-5) | 0.52 | d = 1.15 (large) | 0.010 |
-| GPT-5 (gpt-5.2) | 0.74 | d = 2.06 (large) | 0.028 |
-| Gemini (gemini-3-flash) | 0.75 | d = 2.18 (large) | <0.001 |
+| Claude (claude-sonnet-4-5) | 0.56 | d = 1.34 (large) | <0.0001 |
+| GPT-5 (gpt-5.2) | 0.76 | d = 2.26 (large) | <0.0001 |
+| Gemini (gemini-3-flash) | 0.66 | d = 1.73 (large) | <0.0001 |
 
-When users say "I believe X," models align with X. When users say "I believe NOT X," models shift toward NOT X. All three frontier models. Large effects. Statistically significant.
+When users say "I believe X," models align with X. When users say "I believe NOT X," models shift toward NOT X. All three frontier models. Large effects. Replicated across pilot (n=10) and full study (n=50).
 
-**Adversarial prompting ("give me objections") did not help.** No significant difference from neutral prompting.
+**Adversarial prompting ("give me objections") did not help.** Effect was null or slightly negative.
 
 ---
 
@@ -38,6 +38,25 @@ This is the **calibration trap**.
 
 ---
 
+## Results
+
+### H1: Sycophancy — Confirmed
+
+All three models show statistically significant sycophancy with large effect sizes (d > 1.3). Results replicated from pilot to full study.
+
+### H2: Adversarial Mitigation — Not Supported
+
+Asking for "strongest objections" did not increase critical content:
+
+| Model | Neutral | Adversarial | Difference |
+|-------|---------|-------------|------------|
+| Claude | 0.622 | 0.594 | -0.027 |
+| Gemini | 0.608 | 0.592 | -0.016 |
+
+The proposed mitigation does not work in this paradigm.
+
+---
+
 ## Method
 
 **Design**: Within-stimulus comparison. Same claim presented with pro vs. con user framing.
@@ -49,18 +68,16 @@ Alignment Score = Sim(response, pro_justification) - Sim(response, con_justifica
 Sycophancy Index = correlation(user_framing, alignment_score)
 ```
 
-High SI = model agrees with whatever the user says.
-
-**Sample**: Pilot study, n=10 per condition. 10 controversial stimuli across economics, AI, psychology, policy, and technology.
+**Sample**: 10 controversial stimuli across economics, AI, psychology, policy, technology. Full study n=50 per condition (382 valid trials after API failures).
 
 ---
 
 ## Limitations
 
-1. **Pilot sample** — n=10 per condition. Adequate for detecting large effects; underpowered for subtle ones.
-2. **Semantic similarity ≠ agreement** — Embedding alignment is a proxy, not direct measurement.
-3. **No human outcomes** — Tests LLM behavior, not effects on human beliefs (would require IRB).
-4. **Stimulus selection** — 10 items may not generalize across all domains.
+1. **Semantic similarity ≠ agreement** — Embedding alignment is a proxy.
+2. **API failure rate** — 36% of trials failed (primarily GPT-5 in some conditions).
+3. **No human outcomes** — Tests LLM behavior, not effects on human beliefs.
+4. **10 stimuli** — May not generalize across all domains.
 
 ---
 
@@ -71,24 +88,10 @@ git clone https://github.com/HillaryDanan/calibration-trap.git
 cd calibration-trap
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-cp .env.example .env  # Add your API keys
+cp .env.example .env  # Add API keys
 
-python3 src/run_experiment.py --n 10  # Run
-python3 src/analyze.py                 # Analyze
-```
-
----
-
-## Repository Structure
-
-```
-├── paper/manuscript.md      # Theoretical framework
-├── protocol/PROTOCOL.md     # Pre-registration style protocol
-├── src/
-│   ├── run_experiment.py    # Data collection
-│   └── analyze.py           # Embedding-based analysis
-├── data/raw/                # API responses
-└── results/figures/         # Visualizations
+python3 src/run_experiment.py --n 50
+python3 src/analyze.py
 ```
 
 ---
@@ -105,6 +108,6 @@ Sharma, M., et al. (2023). Towards understanding sycophancy in language models. 
 
 **Hillary Danan**
 
-*AI assistance: Claude (Anthropic) — code, literature synthesis, drafting. Author takes full responsibility for content and errors.*
+*AI assistance: Claude (Anthropic). Author takes full responsibility for content and errors.*
 
-*Disclosure: Claude showed sycophancy (SI=0.52) in this study.*
+*Disclosure: Claude showed sycophancy (SI=0.56) in this study.*
